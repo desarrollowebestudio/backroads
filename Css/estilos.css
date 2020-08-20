@@ -14,7 +14,8 @@ VARIABLES
 html {
 
   /* Paleta Colores Primarios */
-  --colorPrimarioOscuro: hsl(185, 90%, 15%);
+  --valoresPrimarioOscuro: 185, 90%, 15%;
+  --colorPrimarioOscuro: hsl(var(--valoresPrimarioOscuro));
   --colorPrimario: hsl(185, 60%, 45%);
   --colorPrimarioClaro: hsl(185, 80%, 75%);
 
@@ -29,12 +30,16 @@ html {
 
   /* Dimensiones */
   --radioBordes: 5px;
-  --espaciadoTitulos: 0.15em;
+  --espaciadoTitulos: 0.1em;
+  --espaciadoParrafos: 0.05em;
 
   /* Sombras */
   --sombraClara: 0 5px 15px rgba(0, 0, 0, 0.1);
   --sombraOscura: 0 5px 15px rgba(0, 0, 0, 0.2);
   --sombraBoton: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+  /* Otros */
+  --transicionHover: all 300ms linear;
 }
 
 
@@ -53,7 +58,6 @@ RESET ESTILOS
 
 a:link, a:visited {
   text-decoration: none;
-  color: inherit;
 }
 
 /*
@@ -72,28 +76,32 @@ img {
 }
 
 h1, h2, h3, h4 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.35em;
+  letter-spacing: var(--espaciadoTitulos);
   color: var(--colorSecundario);
   text-transform: capitalize;
-  letter-spacing: var(--espaciadoTitulos);
 }
 
 p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: var(--espaciadoParrafos);
   color: var(--colorGrisParrafos);
-  line-height: 1.4;
+
 }
 
 .boton {
   display: inline-block;
   cursor: pointer;
   background-color: var(--colorPrimario);
-  padding: 0.5em 1em;
+  padding: 1.25em 2.5em;
   box-shadow: var(--sombraBoton);
+  border-radius: var(--radioBordes);
+  font-size: 0.75rem;
+  letter-spacing: var(--espaciadoTitulos);
   color: white;
   text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: var(--espaciadoTitulos);
+  transition: var(--transicionHover);
 }
 
 .boton:hover {
@@ -102,10 +110,11 @@ p {
 }
 
 /* 
-=====================================
-ESTILOS CELULAR VERTICAL + HORIZONTAL
+=============================
+ESTILOS GENERALES:
+CELULAR VERTICAL + HORIZONTAL
 (< 768 PX)
-=====================================
+=============================
 */
 @media (max-width: 768px) {
   h1 {
@@ -129,10 +138,11 @@ ESTILOS CELULAR VERTICAL + HORIZONTAL
 }
 
 /* 
-===========================
-ESTILOS TABLET + COMPUTADOR
+===================
+ESTILOS GENERALES:
+TABLET + COMPUTADOR
 (> 768 PX) 
-===========================
+===================
 */
 @media (min-width: 768px) {
   h1 {
@@ -154,3 +164,74 @@ ESTILOS TABLET + COMPUTADOR
     font-size: 1rem;
   }
 }
+
+/*
+=============
+SECCIÓN: HERO
+=============
+*/
+
+#seccionHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+div.contenidoHero {
+  text-align: center;
+  padding: 0px 3rem;
+}
+
+#seccionHero h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+#seccionHero p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50ch;
+  color: white;
+}
+
+a#botonHero {
+  background-color: white;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  color: var(--colorPrimario);
+}
+
+a#botonHero:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* Media Queries - Sección Hero:
+  Celular Horizontal + Vertical (< 768 px) */
+@media (max-width: 768px) {
+  #seccionHero {
+    --coloresGradiente: var(--colorPrimarioClaro), var(--colorPrimarioOscuro);
+    background-image: linear-gradient(to bottom, var(--coloresGradiente));
+  }
+}
+
+/* Media Queries - Sección Hero:
+  Tablet + Computador (> 768 px) */
+@media (min-width: 768px) {
+  #seccionHero {
+    --coloresGradiente: hsla(var(--valoresPrimarioOscuro), 0.5), black;
+    --gradiente: linear-gradient(to bottom, var(--coloresGradiente));
+    --imagen: url('/Recursos/Imagenes/main.jpeg');
+    background-image: var(--gradiente), var(--imagen);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+
+
+
