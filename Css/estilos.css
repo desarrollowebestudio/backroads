@@ -1,0 +1,157 @@
+/*
+=============
+IMPORTACIONES
+=============
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+/*
+=========
+VARIABLES
+=========
+*/
+
+html {
+
+  /* Paleta Colores Primarios */
+  --colorPrimarioOscuro: hsl(185, 90%, 15%);
+  --colorPrimario: hsl(185, 60%, 45%);
+  --colorPrimarioClaro: hsl(185, 80%, 75%);
+
+  /* Paleta Colores Secundarios */
+  --colorSecundario: hsl(209, 60%, 15%);
+
+  /* Paleta Colores Escala Grises */
+  --colorGrisParrafos: hsl(210, 20%, 50%);
+
+  /* Fuentes */
+  --fuentePrincipal: 'Lato', sans-serif;
+
+  /* Dimensiones */
+  --radioBordes: 5px;
+  --espaciadoTitulos: 0.15em;
+
+  /* Sombras */
+  --sombraClara: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --sombraOscura: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --sombraBoton: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+=============
+RESET ESTILOS
+=============
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+=================
+ESTILOS GENERALES
+=================
+*/
+
+body {
+  background-color: white;
+  font-family: var(--fuentePrincipal);
+  color: var(--colorSecundario);
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  text-transform: capitalize;
+  letter-spacing: var(--espaciadoTitulos);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  color: var(--colorGrisParrafos);
+}
+
+.boton {
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--colorPrimario);
+  padding: 0.5em 1em;
+  box-shadow: var(--sombraBoton);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: var(--espaciadoTitulos);
+}
+
+.boton:hover {
+  background-color: var(--colorPrimarioClaro);
+  color: var(--colorPrimarioOscuro);
+}
+
+/* 
+=====================================
+ESTILOS CELULAR VERTICAL + HORIZONTAL
+(< 768 PX)
+=====================================
+*/
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 0.875rem;
+  }
+  h1, h2, h3, h4 {
+    line-height: 1.25;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+}
+
+/* 
+===========================
+ESTILOS TABLET + COMPUTADOR
+(> 768 PX) 
+===========================
+*/
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h1, h2, h3, h4 {
+    line-height: 1;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
