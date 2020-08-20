@@ -45,8 +45,8 @@ RESET ESTILOS
 */
 
 * {
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
   padding: 0;
   font-size: 1rem;
 }
@@ -65,7 +65,6 @@ ESTILOS GENERALES
 body {
   background-color: white;
   font-family: var(--fuentePrincipal);
-  color: var(--colorSecundario);
 }
 
 img {
@@ -73,15 +72,16 @@ img {
 }
 
 h1, h2, h3, h4 {
+  margin-bottom: 0.75rem;
+  color: var(--colorSecundario);
   text-transform: capitalize;
   letter-spacing: var(--espaciadoTitulos);
-  margin-bottom: 0.75rem;
 }
 
 p {
-  line-height: 1.4;
   margin-bottom: 1.25rem;
   color: var(--colorGrisParrafos);
+  line-height: 1.4;
 }
 
 .boton {
@@ -154,4 +154,3 @@ ESTILOS TABLET + COMPUTADOR
     font-size: 1rem;
   }
 }
-
