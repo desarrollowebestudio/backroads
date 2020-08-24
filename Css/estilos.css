@@ -72,6 +72,7 @@ body {
 
 img {
   width: 100%;
+  max-height: inherit;
 }
 
 h1, h2, h3, h4 {
@@ -110,8 +111,8 @@ p {
   color: var(--colorPrimarioOscuro);
 }
 
-section {
-  padding: 4rem 0px;
+section:not(#seccionHero) {
+  margin: 4rem 0px;
 }
 
 div.contenidoSeccion {
@@ -259,7 +260,7 @@ a#botonHero:hover {
 }
 
 /* Media Queries - Sección Hero:
-  Celular Horizontal + Vertical (< 768 px) */
+   B1: Celular Horizontal + Vertical (< 768 px) */
 @media (max-width: 768px) {
   #seccionHero {
     --coloresGradiente: var(--colorPrimarioClaro), var(--colorPrimarioOscuro);
@@ -268,7 +269,7 @@ a#botonHero:hover {
 }
 
 /* Media Queries - Sección Hero:
-  Tablet + Computador (> 768 px) */
+   B2: Tablet + Computador (> 768 px) */
 @media (min-width: 768px) {
   #seccionHero {
     --coloresGradiente: hsla(var(--valoresPrimario), 0.5), rgba(0, 0, 0, 0.9);
@@ -277,5 +278,65 @@ a#botonHero:hover {
     background-image: var(--gradiente), var(--imagen);
     background-size: cover;
     background-position: center;
+  }
+}
+
+/*
+==================
+SECCIÓN: ACERCA DE
+==================
+*/
+
+#seccionAcercaDe div.contenidoSeccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#seccionAcercaDe article {
+  flex-shrink: 0;
+}
+
+#columnaImagenAcercaDe {
+  max-height: 320px;
+}
+
+#columnaImagenAcercaDe img {
+  object-fit: cover;
+}
+
+/* Media Queries - Sección Hero:
+   B1: Celular Horizontal + Vertical (< 768 px) */
+@media (max-width: 768px) {
+  #seccionAcercaDe article {
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Media Queries - Sección Hero:
+   B2: Tablet + Computador (> 768 px) */
+@media (min-width: 768px) {
+  #seccionAcercaDe article {
+    flex-basis: calc(50% - 1rem);
+    margin-bottom: 0px;
+  }
+  div.tituloSeccion {
+    margin-bottom: 3rem;
+  }
+  #columnaImagenAcercaDe {
+    position: relative;
+  }
+  #columnaImagenAcercaDe::before  {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 0.375rem solid var(--colorPrimario);
+    top: -1rem;
+    left: -1rem;
+    z-index: -1;
   }
 }
