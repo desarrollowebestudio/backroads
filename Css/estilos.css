@@ -15,8 +15,8 @@ html {
 
   /* Paleta Colores Primarios */
   --valoresPrimario: 185, 60%, 45%;
-  --colorPrimarioOscuro: hsl(185, 90%, 15%);
   --colorPrimario: hsl(var(--valoresPrimario));
+  --colorPrimarioOscuro: hsl(185, 90%, 15%);
   --colorPrimarioClaro: hsl(185, 80%, 75%);
 
   /* Paleta Colores Secundarios */
@@ -29,6 +29,7 @@ html {
   --fuentePrincipal: 'Lato', sans-serif;
 
   /* Dimensiones */
+  --anchoAreaActiva: 1200px;
   --radioBordes: 5px;
   --espaciadoTitulos: 0.05em;
   --espaciadoParrafos: 0.05em;
@@ -52,7 +53,6 @@ RESET ESTILOS
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  font-size: 1rem;
 }
 
 a:link, a:visited {
@@ -75,23 +75,25 @@ img {
 }
 
 h1, h2, h3, h4 {
-  margin-bottom: 0.35em;
+  margin-bottom: 1rem;
   letter-spacing: var(--espaciadoTitulos);
   color: var(--colorSecundario);
   text-transform: capitalize;
 }
 
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1em;
+  font-size: 0.875rem;
   line-height: 1.35;
   letter-spacing: var(--espaciadoParrafos);
   color: var(--colorGrisParrafos);
-
+  text-align: justify;
 }
 
 .boton {
   display: inline-block;
   cursor: pointer;
+  margin-top: 0.5rem;
   background-color: var(--colorPrimario);
   padding: 1.15em 2.5em;
   box-shadow: var(--sombraBoton);
@@ -108,9 +110,58 @@ p {
   color: var(--colorPrimarioOscuro);
 }
 
+section {
+  padding: 4rem 0px;
+}
+
+div.contenidoSeccion {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--anchoAreaActiva);
+}
+
+div.tituloSeccion {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+div.tituloSeccion h2 {
+  text-transform: uppercase;
+}
+
+span.enfasisTitulo {
+  color: var(--colorPrimario);
+}
+
+/*
+======================================
+ESTILOS GENERALES A1:
+CELULAR VERTICAL + HORIZONTAL + TABLET
+(< 992 PX)
+======================================
+*/
+@media (max-width: 992px) {
+  div.contenidoSeccion {
+    width: 90vw;
+  }
+}
+
+/*
+=====================
+ESTILOS GENERALES A2:
+COMPUTADOR (> 992 PX)
+=====================
+*/
+@media (min-width: 992px) {
+  div.contenidoSeccion {
+    width: 95vw;
+  }
+}
+
+
 /* 
 =============================
-ESTILOS GENERALES:
+ESTILOS GENERALES B1:
 CELULAR VERTICAL + HORIZONTAL
 (< 768 PX)
 =============================
@@ -131,17 +182,14 @@ CELULAR VERTICAL + HORIZONTAL
   h1, h2, h3, h4 {
     line-height: 1.25;
   }
-  p {
-    font-size: 0.875rem;
-  }
 }
 
 /* 
-===================
-ESTILOS GENERALES:
+=====================
+ESTILOS GENERALES B2:
 TABLET + COMPUTADOR
 (> 768 PX) 
-===================
+=====================
 */
 @media (min-width: 768px) {
   h1 {
@@ -158,9 +206,6 @@ TABLET + COMPUTADOR
   }
   h1, h2, h3, h4 {
     line-height: 1;
-  }
-  p {
-    font-size: 1rem;
   }
 }
 
@@ -190,9 +235,12 @@ div.contenidoHero {
 #seccionHero p {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1.5rem;
   max-width: 60ch;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   color: white;
+  text-align: center;
 }
 
 a#botonHero {
