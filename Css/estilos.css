@@ -3,7 +3,7 @@
 IMPORTACIONES
 =============
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,400,700");
 
 /*
 =========
@@ -89,7 +89,6 @@ p {
   line-height: 1.35;
   letter-spacing: var(--espaciadoParrafos);
   color: var(--colorGrisParrafos);
-  text-align: justify;
 }
 
 .boton {
@@ -140,11 +139,11 @@ span.enfasisTitulo {
 }
 
 /*
-======================================
+===============================================
 ESTILOS GENERALES A1:
-CELULAR VERTICAL + HORIZONTAL + TABLET
+CELULAR VERTICAL, HORIZONTAL + TABLET VERTICAL
 (< 992 PX)
-======================================
+===============================================
 */
 @media (max-width: 992px) {
   div.contenidoSeccion {
@@ -153,10 +152,10 @@ CELULAR VERTICAL + HORIZONTAL + TABLET
 }
 
 /*
-=====================
+=========================================
 ESTILOS GENERALES A2:
-COMPUTADOR (> 992 PX)
-=====================
+TABLET HORIZONTAL + COMPUTADOR (> 992 PX)
+=========================================
 */
 @media (min-width: 992px) {
   div.contenidoSeccion {
@@ -168,7 +167,7 @@ COMPUTADOR (> 992 PX)
 /* 
 =============================
 ESTILOS GENERALES B1:
-CELULAR VERTICAL + HORIZONTAL
+CELULAR VERTICAL, HORIZONTAL
 (< 768 PX)
 =============================
 */
@@ -234,6 +233,8 @@ div.contenidoHero {
 }
 
 #seccionHero h1 {
+  margin-bottom: 2rem;
+  font-weight: 100;
   color: white;
   text-transform: uppercase;
 }
@@ -312,7 +313,11 @@ SECCIÓN: ACERCA DE
   object-fit: cover;
 }
 
-/* Media Queries - Sección Hero:
+#columnaInfoAcercaDe p {
+  text-align: justify;
+}
+
+/* Media Queries - Sección Acerca De:
    B1: Celular Horizontal + Vertical (< 768 px) */
 @media (max-width: 768px) {
   #seccionAcercaDe article {
@@ -321,9 +326,12 @@ SECCIÓN: ACERCA DE
   #seccionAcercaDe article:not(:last-child) {
     margin-bottom: 1.5rem;
   }
+  #columnaInfoAcercaDe {
+    text-align: center;
+  }
 }
 
-/* Media Queries - Sección Hero:
+/* Media Queries - Sección Acerca De:
    B2: Tablet + Computador (> 768 px) */
 @media (min-width: 768px) {
   #seccionAcercaDe article {
@@ -331,6 +339,9 @@ SECCIÓN: ACERCA DE
   }
   div.tituloSeccion {
     margin-bottom: 3rem;
+  }
+  #columnaInfoAcercaDe {
+    text-align: left;
   }
   #columnaImagenAcercaDe {
     position: relative;
@@ -356,4 +367,92 @@ SECCIÓN: SERVICIOS
 
 #seccionServicios {
   background-color: var(--colorGrisClaro);
+}
+
+#seccionServicios div.contenidoSeccion {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#seccionServicios article {
+  flex-shrink: 0;
+}
+
+div.columnaIconoServicio {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--colorPrimario);
+  font-size: 1.5rem;
+  color: var(--colorPrimarioOscuro);
+}
+
+article.servicio p {
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article.servicio i {
+  text-align: center;
+}
+
+/* Media Queries - Sección Servicios:
+   C1: Celular Vertical (< 576 px) */
+@media (max-width: 576px) {
+  #seccionServicios article {
+    flex-basis: 100%;
+  }
+  article.servicio:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Media Queries - Sección Acerca De:
+   C2: Celular Horizontal + Tablet Vertical (576 px - 992 px) */
+@media (min-width: 576px) and (max-width: 992px) {
+  #seccionServicios article {
+    flex-basis: calc(50% - 1rem);
+  }
+  article.servicio:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+  
+/* Media Queries - Sección Acerca De:
+   C3: Tablet Horizontal + Computador (> 992 px) */
+@media (min-width: 992px) {
+  #seccionServicios article {
+    flex-basis: calc((100% / 3) - 1rem);
+  }
+  article.servicio {
+    margin-bottom: 0px;
+  }
+}
+
+/* Media Queries - Sección Servicios:
+   D1: Celular Vertical, Horizontal + Tablet Vertical, Horizontal (< 1320 px) */
+@media (max-width: 1320px) {
+  article.servicio {
+    text-align: center;
+  }
+}
+
+/* Media Queries - Sección Servicios:
+   D2: Computador (> 1320 px) */
+@media (min-width: 1320px) {
+  article.servicio {
+    display: flex;
+    align-items: flex-start;
+  }
+  div.columnaTextoServicio {
+    padding-left: 1rem;
+  }
+  div.columnaTextoServicio h4 {
+    margin-bottom: 0.5rem;
+  }
+  div.columnaTextoServicio p {
+    text-align: justify;
+  }
 }
