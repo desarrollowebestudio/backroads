@@ -96,7 +96,7 @@ p {
   cursor: pointer;
   margin-top: 0.5rem;
   background-color: var(--colorPrimario);
-  padding: 1.15em 2.5em;
+  padding: 1.05em 2.5em;
   box-shadow: var(--sombraBoton);
   border-radius: var(--radioBordes);
   font-size: 0.75rem;
@@ -112,6 +112,7 @@ p {
 }
 
 i.fas {
+  text-align: center;
   width: 1.25em;
 }
 
@@ -394,10 +395,6 @@ article.servicio p {
   margin-right: auto;
 }
 
-article.servicio i {
-  text-align: center;
-}
-
 /* Media Queries - Sección Servicios:
    C1: Celular Vertical (< 576 px) */
 @media (max-width: 576px) {
@@ -454,5 +451,114 @@ article.servicio i {
   }
   div.columnaTextoServicio p {
     text-align: justify;
+  }
+}
+
+/*
+==========================
+SECCIÓN: VIAJES DESTACADOS
+==========================
+*/
+
+#seccionDestacados div.contenidoSeccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+article.cartaViaje {
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+#seccionDestacados article {
+  border-radius: var(--radioBordes);
+  background-color: var(--colorGrisClaro);
+  box-shadow: var(--sombraClara);
+  transition: var(--transicionHover);
+}
+
+#seccionDestacados article:hover {
+  box-shadow: var(--sombraOscura);
+  transform: scale(1.02);
+}
+
+div.encabezadoCartaViaje img {
+  height: 15rem;
+  object-fit: cover;
+}
+
+#seccionDestacados i {
+  margin-right: 0.2em;
+}
+
+#seccionDestacados p {
+  text-align: justify;
+  margin-bottom: 0px;
+}
+
+div.encabezadoCartaViaje {
+  position: relative;
+}
+
+p.fechaViaje {
+  position: absolute;
+  right: 0px;
+  bottom: 3px;
+  margin-bottom: 0px;
+  background-color: var(--colorPrimarioClaro);
+  border-top-left-radius: 1rem;
+  padding: 0.4em 1em;
+  color: var(--colorPrimarioOscuro);
+}
+
+div.cuerpoCartaViaje {
+  padding: 1rem;
+}
+
+div.cuerpoCartaViaje h4 {
+  margin-bottom: 0.5rem;
+  color: var(--colorPrimario);
+  text-transform: uppercase;
+}
+
+div.pieCartaViaje {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+div.pieCartaViaje p {
+  margin-right: 1em;
+  color: var(--colorPrimarioOscuro);
+}
+
+div.botonViajes {
+  text-align: center;
+}
+
+/* Media Queries - Sección Viajes Destacados:
+   E1: Celular Vertical (< 576 px) */
+@media (max-width: 576px) {
+  article.cartaViaje {
+    flex-basis: 100%;
+  }
+}
+
+/* Media Queries - Sección Viajes Destacados:
+   E2: Celular Horizontal + Tablet Vertical, Horizontal (576 - 1320 px) */
+@media (min-width: 576px) and (max-width: 1320px) {
+  article.cartaViaje {
+    flex-basis: calc(50% - 1rem);
+  }
+}
+
+/* Media Queries - Sección Viajes Destacados:
+   E3: Computador (> 1320 px) */
+@media (min-width: 1320px) {
+  article.cartaViaje {
+    flex-basis: calc((100% / 3) - 2rem);
   }
 }
