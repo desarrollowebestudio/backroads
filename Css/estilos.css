@@ -413,7 +413,7 @@ article.servicio i {
    C2: Celular Horizontal + Tablet Vertical (576 px - 992 px) */
 @media (min-width: 576px) and (max-width: 992px) {
   #seccionServicios article {
-    flex-basis: calc(50% - 1rem);
+    flex-basis: calc(50% - 2rem);
   }
   article.servicio:not(:last-child) {
     margin-bottom: 1.5rem;
@@ -424,7 +424,7 @@ article.servicio i {
    C3: Tablet Horizontal + Computador (> 992 px) */
 @media (min-width: 992px) {
   #seccionServicios article {
-    flex-basis: calc((100% / 3) - 1rem);
+    flex-basis: calc((100% / 3) - 2rem);
   }
   article.servicio {
     margin-bottom: 0px;
