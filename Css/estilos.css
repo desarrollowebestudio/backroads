@@ -20,7 +20,8 @@ html {
   --colorPrimarioClaro: hsl(185, 80%, 75%);
 
   /* Paleta Colores Secundarios */
-  --colorSecundario: hsl(210, 60%, 15%);
+  --valoresSecundario: 210, 60%, 15%;
+  --colorSecundario: hsl(var(--valoresSecundario));
 
   /* Paleta Colores Escala Grises */
   --colorGrisTexto: hsl(210, 20%, 50%);
@@ -118,7 +119,7 @@ i.fas {
 }
 
 section:not(#seccionHero) {
-  padding: 4rem 0px;
+  padding: 3.5rem 0px;
 }
 
 div.contenidoSeccion {
@@ -585,3 +586,108 @@ div.botonViajes {
     flex-basis: calc((100% / 3) - 2rem);
   }
 }
+
+/*
+=================
+SECCIÓN: CONTACTO
+=================
+*/
+
+#seccionContacto {
+  background: var(--colorPrimario);
+}
+
+#seccionContacto .contenidoSeccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+article#formularioContacto {
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: center;
+}
+
+#columnaTextoContacto h3 {
+  color: white;
+  font-weight: normal;
+}
+
+#columnaTextoContacto  p {
+  color: var(--colorPrimarioClaro);
+  font-size: 1rem;
+}
+
+#formularioContacto form {
+  display: flex;
+  max-width: 50ch;
+  border-radius: var(--radioBordes);
+  overflow: hidden;
+  box-shadow: var(--sombraBoton);
+}
+
+#formularioContacto form:focus-within {
+  box-shadow: 0 1px 3px 1px hsla(var(--valoresSecundario), 0.5); 
+}
+
+#formularioContacto .campoFormulario {
+  padding: 1.2em 2em;
+  border: transparent;
+}
+
+#formularioContacto input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--colorGrisTexto);
+}
+
+#formularioContacto button {
+  cursor: pointer;
+  background-color: var(--colorPrimarioClaro);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--colorSecundario);
+  text-transform: uppercase;
+  transition: var(--transicionHover);
+}
+
+#formularioContacto .campoFormulario:focus {
+  outline: none;
+}
+
+#formularioContacto button:hover {
+  background: var(--colorPrimarioOscuro);
+  color: var(--colorPrimarioClaro);
+}
+
+/* Media Queries - Sección Contacto:
+   A1: Celular Vertical, Horizontal + Tablet Vertical (< 992 px) */
+@media (max-width: 992px) {
+  #columnaTextoContacto {
+    flex-basis: 100%;
+  }
+  #columnaTextoContacto p {
+    margin-bottom: 1.5rem;
+  }
+  #formularioContacto form {
+    margin-left: 0;
+  }
+}
+
+/* Media Queries - Sección Contacto:
+   A2: Tablet Horizontal + Computador (> 992 px) */
+@media (min-width: 992px) {
+  #columnaTextoContacto {
+    margin-right: 2rem;
+  }
+  #columnaTextoContacto p {
+    margin-bottom: 0px;
+  }
+  #formularioContacto form {
+    margin-left: auto;
+  }
+}
+
