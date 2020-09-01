@@ -118,7 +118,7 @@ i.fas {
   width: 1.25em;
 }
 
-section:not(#seccionHero) {
+section:not(#seccionHero):not(#seccionGaleria) {
   padding: 3.5rem 0px;
 }
 
@@ -690,3 +690,72 @@ article#formularioContacto {
     margin-left: auto;
   }
 }
+
+/*
+================
+SECCIÓN: GALERÍA
+================
+*/
+
+#seccionGaleria {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+#seccionGaleria article {
+  position: relative;
+  background-color: var(--colorPrimario);
+}
+
+a.iconoGaleria {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: var(--transicionHover);
+}
+
+img.imagenGaleria {
+  display: block;
+  height: 15rem;
+  object-fit: cover;
+  transition: var(--transicionHover);
+}
+
+#seccionGaleria article:hover img.imagenGaleria {
+  opacity: 0.65;
+}
+
+#seccionGaleria article:hover a.iconoGaleria {
+  opacity: 1;
+}
+
+/* Media Queries - Sección Servicios:
+   C1: Celular Vertical (< 576 px) */
+@media (max-width: 576px) {
+  #seccionGaleria article {
+    flex-basis: 100%;
+  }
+}
+
+/* Media Queries - Sección Acerca De:
+   C2: Celular Horizontal + Tablet Vertical (576 px - 992 px) */
+@media (min-width: 576px) and (max-width: 992px) {
+  #seccionGaleria article {
+    flex-basis: calc(100% / 2);
+  }
+}
+
+/* Media Queries - Sección Acerca De:
+   C3: Tablet Horizontal + Computador (> 992 px) */
+@media (min-width: 992px) {
+  #seccionGaleria article {
+    flex-basis: calc(100% / 4);
+  }
+}
+
