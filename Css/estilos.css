@@ -3,6 +3,7 @@
 IMPORTACIONES
 =============
 */
+
 @import url("https://fonts.googleapis.com/css?family=Lato:100,400,700");
 
 /*
@@ -122,6 +123,10 @@ p {
 .boton:hover {
   background-color: var(--colorPrimarioClaro);
   color: var(--colorPrimarioOscuro);
+}
+
+li {
+  display: inline-block;
 }
 
 i.fas, i.fab {
@@ -245,14 +250,17 @@ BARRA DE NAVEGACIÓN
 }
 
 nav {
+  display: flex;
   max-width: var(--anchoAreaActiva);
   margin: 0px auto;
 }
 
 div#encabezadoNavegacion {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1rem 2rem;
 }
 
@@ -261,13 +269,7 @@ div#encabezadoNavegacion img {
 }
 
 ul#menuEnlacesNavegacion {
-  max-height: 0px;
-  overflow: hidden;
-  transition: var(--transicionHover);
-}
-
-ul#menuEnlacesNavegacion.mostrarMenu {
-  max-height: calc(5 * (2 * 0.875rem + 1.2 * 0.875rem) + 1rem);
+  display: flex;
 }
 
 ul#menuEnlacesNavegacion a {
@@ -280,6 +282,9 @@ ul#menuEnlacesNavegacion a {
 /* Media Queries - Sección Contacto:
    A1: Celular Vertical, Horizontal + Tablet Vertical (< 992 px) */
 @media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+  }
   #botonMenuDesplegable {
     font-size: 1.5rem;
     color: var(--colorPrimario);
@@ -287,6 +292,15 @@ ul#menuEnlacesNavegacion a {
   }
   #botonMenuDesplegable:hover {
     transform: scale(1.2);
+  }
+  ul#menuEnlacesNavegacion {
+    flex-direction: column;
+    max-height: 0px;
+    overflow: hidden;
+    transition: var(--transicionHover);
+  }
+  ul#menuEnlacesNavegacion.mostrarMenu {
+    max-height: calc(5 * (2 * 0.875rem + 1.2 * 0.875rem) + 1rem);
   }
   ul#menuEnlacesNavegacion a {
     display: block;
@@ -307,8 +321,38 @@ ul#menuEnlacesNavegacion a {
 /* Media Queries - Sección Contacto:
    A2: Tablet Horizontal + Computador (> 992 px) */
 @media (min-width: 992px) {
+  header#barraNavegacion {
+    padding: 1rem 2rem;
+  }
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div#encabezadoNavegacion {
+    padding: 0px;
+  }
   #botonMenuDesplegable {
     display: none;
+  }
+  ul#menuEnlacesNavegacion {
+    flex-direction: row;
+    max-height: none;
+  }
+  ul#menuEnlacesNavegacion a {
+    margin: 0px 0.5rem;
+  }
+  ul#menuEnlacesNavegacion a:hover {
+    color: var(--colorPrimario);
+  }
+  ul#iconosBarraNavegacion a {
+    margin-left: 0.35rem;
+    font-size: 1rem;
+    color: var(--colorPrimario);
+    transition: var(--transicionHover);
+  }
+  ul#iconosBarraNavegacion a:hover {
+    color: var(--colorPrimarioClaro);
   }
 }
 

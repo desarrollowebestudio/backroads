@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const botonMenu = document.getElementById('botonMenuDesplegable');
   const menuEnlaces = document.getElementById('menuEnlacesNavegacion');
   const enlacesScroll = document.querySelectorAll("a.enlaceScroll");
-  const barraNavegacion = document.getElementById('encabezadoNavegacion');
+  const barraNavegacion = document.getElementById('barraNavegacion');
 
   // Comportamiento Desplegable: Menú Enlaces
   botonMenu.addEventListener('click', () => {
