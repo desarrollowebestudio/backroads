@@ -55,8 +55,8 @@ RESET ESTILOS
 
 * {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a:link, a:visited {
@@ -96,6 +96,10 @@ p {
   line-height: 1.35;
   letter-spacing: var(--espaciadoParrafos);
   color: var(--colorGrisTexto);
+}
+
+button {
+  cursor: pointer;
 }
 
 .boton {
@@ -314,7 +318,7 @@ SECCIÓN: ACERCA DE
 }
 
 #columnaImagenAcercaDe {
-  max-height: 50vh;
+  max-height: 24rem;
 }
 
 #columnaImagenAcercaDe img {
@@ -650,7 +654,6 @@ article#formularioContacto {
 }
 
 #formularioContacto button {
-  cursor: pointer;
   background-color: var(--colorPrimarioClaro);
   font-size: 0.7rem;
   letter-spacing: 0.2em;
