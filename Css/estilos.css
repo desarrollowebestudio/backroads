@@ -260,7 +260,17 @@ div#encabezadoNavegacion img {
   width: auto;
 }
 
-ul#enlacesBarraNavegacion a {
+ul#menuEnlacesNavegacion {
+  max-height: 0px;
+  overflow: hidden;
+  transition: var(--transicionHover);
+}
+
+ul#menuEnlacesNavegacion.mostrarMenu {
+  max-height: calc(5 * (2 * 0.875rem + 1.2 * 0.875rem) + 1rem);
+}
+
+ul#menuEnlacesNavegacion a {
   font-size: 0.875rem;
   letter-spacing: var(--espaciadoEnlaces);
   color: var(--colorSecundario);
@@ -278,12 +288,12 @@ ul#enlacesBarraNavegacion a {
   #botonMenuDesplegable:hover {
     transform: scale(1.2);
   }
-  ul#enlacesBarraNavegacion a {
+  ul#menuEnlacesNavegacion a {
     display: block;
     padding: 0.875rem 2rem;
     text-transform: uppercase;
   }
-  ul#enlacesBarraNavegacion a:hover {
+  ul#menuEnlacesNavegacion a:hover {
     background-color: var(--colorPrimarioClaro);
     border-left: 5px solid var(--colorPrimario);
     padding-left: 2.25rem;
