@@ -67,6 +67,17 @@ ul {
   list-style-type: none;
 }
 
+img {
+  width: 100%;
+  max-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+}
+
 /*
 =================
 ESTILOS GENERALES
@@ -76,11 +87,6 @@ ESTILOS GENERALES
 body {
   background-color: white;
   font-family: var(--fuentePrincipal);
-}
-
-img {
-  width: 100%;
-  max-height: inherit;
 }
 
 h1, h2, h3, h4 {
@@ -96,10 +102,6 @@ p {
   line-height: 1.35;
   letter-spacing: var(--espaciadoParrafos);
   color: var(--colorGrisTexto);
-}
-
-button {
-  cursor: pointer;
 }
 
 .boton {
@@ -122,7 +124,7 @@ button {
   color: var(--colorPrimarioOscuro);
 }
 
-i.fas {
+i.fas, i.fab {
   text-align: center;
   width: 1.25em;
 }
@@ -223,6 +225,80 @@ TABLET + COMPUTADOR
   }
   h1, h2, h3, h4 {
     line-height: 1;
+  }
+}
+
+/* 
+===================
+BARRA DE NAVEGACIÓN
+===================
+*/
+
+#barraNavegacion {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  box-shadow: var(--sombraOscura);
+}
+
+nav {
+  max-width: var(--anchoAreaActiva);
+  margin: 0px auto;
+}
+
+div#encabezadoNavegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+}
+
+div#encabezadoNavegacion img {
+  width: auto;
+}
+
+ul#enlacesBarraNavegacion a {
+  font-size: 0.875rem;
+  letter-spacing: var(--espaciadoEnlaces);
+  color: var(--colorSecundario);
+  transition: var(--transicionHover);
+}
+
+/* Media Queries - Sección Contacto:
+   A1: Celular Vertical, Horizontal + Tablet Vertical (< 992 px) */
+@media (max-width: 992px) {
+  #botonMenuDesplegable {
+    font-size: 1.5rem;
+    color: var(--colorPrimario);
+    transition: var(--transicionHover);
+  }
+  #botonMenuDesplegable:hover {
+    transform: scale(1.2);
+  }
+  ul#enlacesBarraNavegacion a {
+    display: block;
+    padding: 0.875rem 2rem;
+    text-transform: uppercase;
+  }
+  ul#enlacesBarraNavegacion a:hover {
+    background-color: var(--colorPrimarioClaro);
+    border-left: 5px solid var(--colorPrimario);
+    padding-left: 2.25rem;
+    color: var(--colorPrimarioOscuro);
+  }
+  ul#iconosBarraNavegacion {
+    display: none;
+  }
+}
+
+/* Media Queries - Sección Contacto:
+   A2: Tablet Horizontal + Computador (> 992 px) */
+@media (min-width: 992px) {
+  #botonMenuDesplegable {
+    display: none;
   }
 }
 
