@@ -452,6 +452,7 @@ SECCIÓN: ACERCA DE
 }
 
 #columnaImagenAcercaDe img {
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -634,6 +635,7 @@ article.cartaViaje {
 
 div.encabezadoCartaViaje img {
   height: 15rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -861,6 +863,7 @@ a.iconoGaleria {
 img.imagenGaleria {
   display: block;
   height: 15rem;
+  -o-object-fit: cover;
   object-fit: cover;
   transition: var(--transicionHover);
 }
